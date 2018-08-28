@@ -16,7 +16,7 @@ public class MeetingControllerAdvice {
 	}
 	
 	@ExceptionHandler(MeetingNotFoundException.class)
-	public String handelMettingNotFoundException(Exception exception, Model model) {
+	public String handelMeetingNotFoundException(Exception exception, Model model) {
 		model.addAttribute("exception", exception);
 		return "exception-page";
 	}

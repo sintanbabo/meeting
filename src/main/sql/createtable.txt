@@ -13,24 +13,24 @@ CREATE TABLE TB_MEETING_ROOM (
 
 INSERT INTO TB_MEETING_ROOM(
 		meetingRoomName)
-VALUES ('mettingRoom1');
+VALUES ('meetingRoom1');
 
 INSERT INTO TB_MEETING_ROOM(
 		meetingRoomName)
-VALUES ('mettingRoom2');
+VALUES ('meetingRoom2');
 
 INSERT INTO TB_MEETING_ROOM(
 		meetingRoomName)
-VALUES ('mettingRoom3');
+VALUES ('meetingRoom3');
 
 INSERT INTO TB_MEETING_ROOM(
 		meetingRoomName)
-VALUES ('mettingRoom4');
+VALUES ('meetingRoom4');
 
 INSERT INTO TB_MEETING_ROOM(
 		meetingRoomName)
-VALUES ('mettingRoom5');
+VALUES ('meetingRoom5');
 
 INSERT INTO TB_MEETING_ROOM(
 		meetingRoomName)
-VALUES ('mettingRoom6');
+VALUES ('meetingRoom6');

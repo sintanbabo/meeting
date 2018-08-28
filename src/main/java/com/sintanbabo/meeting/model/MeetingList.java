@@ -9,11 +9,11 @@ public class MeetingList {
 	private String user;
 	private Long cycleCount;
 
-	public String getMettingRoomName() {
+	public String getMeetingRoomName() {
 		return meetingRoomName;
 	}
 
-	public void setMettingRoomName(String meetingRoomName) {
+	public void setMeetingRoomName(String meetingRoomName) {
 		this.meetingRoomName = meetingRoomName;
 	}
 

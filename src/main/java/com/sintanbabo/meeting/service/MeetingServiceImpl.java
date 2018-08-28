@@ -35,7 +35,7 @@ public class MeetingServiceImpl implements MeetingService {
 
 	@Transactional
 	@Override
-	public void save(Meeting metting) throws Exception {
+	public void save(Meeting meeting) throws Exception {
 		
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		def.setName("save-transaction");
@@ -47,12 +47,12 @@ public class MeetingServiceImpl implements MeetingService {
 			// start 날짜 검증
 			SimpleDateFormat dtStart = new SimpleDateFormat("yyyyMMddHHmmss");
 			dtStart.setLenient(false);
-			Date dateStart = dtStart.parse(metting.getStart());
+			Date dateStart = dtStart.parse(meeting.getStart());
 	
 			// end 날짜 검증
 			SimpleDateFormat dtEnd = new SimpleDateFormat("yyyyMMddHHmmss");
 			dtEnd.setLenient(false);
-			Date dateEnd = dtEnd.parse(metting.getEnd());
+			Date dateEnd = dtEnd.parse(meeting.getEnd());
 	
 			// end-start 가 30분 이상 차이가 있는지 확인
 			long diff = (dateEnd.getTime() - dateStart.getTime()) / (1000 * 60);
@@ -68,31 +68,31 @@ public class MeetingServiceImpl implements MeetingService {
 			calEnd.setTime(dateEnd);
 			
 			//cycleCount 저장
-			long total = metting.getCycleCount();
+			long total = meeting.getCycleCount();
 			
 			for (int i = 0; i < total; i++) {
 				if (i != 0) {
 					// start 에 7일씩 더한다. (반복)
 					calStart.add(Calendar.DATE, 7);
-					metting.setStart(dtStart.format(calStart.getTime()));
+					meeting.setStart(dtStart.format(calStart.getTime()));
 					
 					// end 에 7일씩 더한다. (반복)
 					calEnd.add(Calendar.DATE, 7);
-					metting.setEnd(dtEnd.format(calEnd.getTime()));
+					meeting.setEnd(dtEnd.format(calEnd.getTime()));
 				}
 				
 				// cycleCount 지정
-				metting.setCycleCount((long)i+1);
+				meeting.setCycleCount((long)i+1);
 	
 				// start end 를 기준으로 중복된 회의실이 있는지 확인
 				HashMap<String, Object> map = new HashMap<String, Object>();
-				map.put("start", metting.getStart());
-				map.put("end", metting.getEnd());
+				map.put("start", meeting.getStart());
+				map.put("end", meeting.getEnd());
 				int check = meetingDao.check(map);
 				if (check > 0)
 					throw new Exception("중복된 예약이 존재합니다.");
 	
-				meetingDao.save(metting);
+				meetingDao.save(meeting);
 			}
 			
 			transactionManager.commit(status);
@@ -120,7 +120,7 @@ public class MeetingServiceImpl implements MeetingService {
 
 	@Transactional
 	@Override
-	public void update(Meeting metting) throws Exception {
+	public void update(Meeting meeting) throws Exception {
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 		def.setName("update-transaction");
 		def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
@@ -128,7 +128,7 @@ public class MeetingServiceImpl implements MeetingService {
 		TransactionStatus status = transactionManager.getTransaction(def);
 
 		try {
-			meetingDao.update(metting);
+			meetingDao.update(meeting);
 			transactionManager.commit(status);
 		}
 		catch(Exception e) {

@@ -8,7 +8,7 @@ import com.sintanbabo.meeting.model.MeetingList;
 
 public interface MeetingService {
 	// 회의실 예약
-	void save(Meeting metting) throws Exception;
+	void save(Meeting meeting) throws Exception;
 
 	// 회의실 예약 세부 확인
 	Meeting get(HashMap<String,Object> map) throws Exception;
@@ -20,7 +20,7 @@ public interface MeetingService {
 	List<Meeting> listAll() throws Exception;
 
 	// 회의실 예약 변경
-	void update(Meeting metting) throws Exception;
+	void update(Meeting meeting) throws Exception;
 
 	// 회의실 예약 취소
 	void delete(HashMap<String,Object> map) throws Exception;

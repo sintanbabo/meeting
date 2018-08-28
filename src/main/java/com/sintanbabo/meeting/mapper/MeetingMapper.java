@@ -8,7 +8,7 @@ import com.sintanbabo.meeting.model.MeetingList;
 
 public interface MeetingMapper {
 	// 회의실 예약
-	int save(Meeting metting);
+	int save(Meeting meeting);
 
 	// 회의실 예약 세부 확인
 	Meeting get(HashMap<String,Object> map);
@@ -23,7 +23,7 @@ public interface MeetingMapper {
 	List<Meeting> listAll();
 
 	// 회의실 예약 변경
-	void update(Meeting metting);
+	void update(Meeting meeting);
 
 	// 회의실 예약 취소
 	void delete(HashMap<String,Object> map);

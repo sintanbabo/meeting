@@ -50,7 +50,6 @@ public class MeetingController {
 	@PostMapping("/meeting")
 	public ResponseEntity<?> save(@RequestBody Meeting meeting) throws Exception{
 		meetingService.save(meeting);
-		System.out.println("post save");
 		return ResponseEntity.ok().body("Meeting Reservation be saved successfully.");
 	}
 
@@ -64,8 +63,8 @@ public class MeetingController {
 		map.put("meetingRoomName", meetingRoomName);
 		map.put("start", start);
 		map.put("end", end);
-		Meeting metting = meetingService.get(map);
-		return ResponseEntity.ok().body(metting);
+		Meeting meeting = meetingService.get(map);
+		return ResponseEntity.ok().body(meeting);
 	}
 
 	// 일자에 해당하는 회의실 예약 정보 확인

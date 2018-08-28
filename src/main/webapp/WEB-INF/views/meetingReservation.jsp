@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Metting Reservation140</title>
+		<title>Meeting Reservation</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery.min.js"></script>
@@ -37,11 +37,11 @@
 				    scrollbar: true
 				});
 			});
-	 		$("#mettingReservation").submit(function(event){
+	 		$("#meetingReservation").submit(function(event){
 	            event.preventDefault();
 	            
 	            var formData = {
-            		mettingRoomName : $("#mettingRoomName").val(),
+            		meetingRoomName : $("#meetingRoomName").val(),
             		start :  $("#start").val(),
             		end :  $("#end").val(),
             		user :  $("#user").val(),
@@ -50,7 +50,7 @@
 	            
 	            $.ajax({
 	                type : 'post',
-	                url : "metting",
+	                url : "meeting",
 	                contentType: 'application/json; charset=UTF-8',
 	                data : JSON.stringify(formData)
 	            });
@@ -58,8 +58,8 @@
 		</script>
 	</head>
 	<body>
-		<form name="mettingReservation">
-			<input type="text" name="mettingRoomName" id="mettingRoomName" placeholder="Metting Room Name"><p>
+		<form name="meetingReservation">
+			<input type="text" name="meetingRoomName" id="meetingRoomName" placeholder="Meeting Room Name"><p>
 			<input type="text" name="startDate" id="datepicker1" placeholder="start date">
 			<input type="text" name="startTime" id="timepicker1" placeholder="start time"><p>
 			<input type="text" name="endDate" id="datepicker2" placeholder="end date">
