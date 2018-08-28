@@ -1,5 +1,5 @@
 
-# Metting
+# Meeting
 
 ## 목차
 - 개요
@@ -27,11 +27,11 @@
 - Apache Tomcat  7.0.47 (Embedded) 
 
 ## 문제 해결 방법
-- Metting Table : **Metting Room Name, Start, End**, User, cycleCount
-- Metting Room Table : **Metting Room Name** 
-- 회의실 예약 시, Start, End 2개의 값을 Date 값으로 저장함으로써, End 와 Start 간 30분 차이가 있는지 확인
+- Meeting Table : **Meeting Room Name, Start, End**, User, cycleCount
+- Meeting Room Table : **Meeting Room Name** 
+- 회의실 예약 시, Start, End 2개의 Date형 값(String 타입) 통해서, End 와 Start 간 30분 차이가 있는지 확인
 - 회의실 예약 시, Start, End 2개의 값을 이용해서 일자가 넘어가서 예약이 될 경우도 처리 (예 : 2018-08-27 11:30 ~ 2018-08-28 00:30)
-- 회의실 예약 내역 확인 시, Metting Room Table 을 이용해서 예약이 이루어지 않은 회의실에 대한 정보도 조회할 수 있도로 함 (아우터 조인)
+- 회의실 예약 내역 확인 시, Meeting Room Table 을 이용해서 예약이 이루어지 않은 회의실에 대한 정보도 조회할 수 있도로 함 (아우터 조인)
 - 반복 예약 시, 하나의 데이터라도 중복이 발생하면 모든 예약이 이루어지지 않도록 Transaction 처리함.
 - 예약이 중첩되는 3가지 경우 처리
   1. 신규 예약의 시작 시간이  이전 예약 시간 사이에 위치하는 경우
