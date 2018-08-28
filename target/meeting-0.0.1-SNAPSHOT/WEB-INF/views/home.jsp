@@ -3,15 +3,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Metting Reservation</title>
+	<title>Meeting Reservation</title>
 </head>
 <body>
     <table align="center">
         <tr>
-            <td><a href="mettingReservation">Reservation</a></td>
+            <td><a href="meetingReservation">Reservation</a></td>
         </tr>
         <tr>
-            <td><a href="mettingList">List</a></td>
+            <td><a href="meetingList">List</a></td>
         </tr>
     </table>
 </body>

@@ -4,17 +4,17 @@
  
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Metting List</title>
+    <title>Meeting List</title>
     <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
     <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
  
 <body>
-	<div class="panel-heading"><span class="lead">List of Metting </span></div>
+	<div class="panel-heading"><span class="lead">List of Meeting </span></div>
 	<table class="table table-hover">
 	    <thead>
 	        <tr>
-	            <th>Metting Room Name</th>
+	            <th>Meeting Room Name</th>
 	            <th>Start</th>
 	            <th>End</th>
 	            <th>User</th>
@@ -22,13 +22,13 @@
 	        </tr>
 	    </thead>
 	    <tbody>
-	    <c:forEach items="${mettingList}" var="mettingList">
+	    <c:forEach items="${meetingList}" var="meetingList">
 	        <tr>
-	            <td>${mettingList.mettingRoomName}</td>
-	            <td>${mettingList.start}</td>
-	            <td>${mettingList.end}</td>
-	            <td>${mettingList.user}</td>
-	            <td>${mettingList.cycleCount}</td>
+	            <td>${meetingList.meetingRoomName}</td>
+	            <td>${meetingList.start}</td>
+	            <td>${meetingList.end}</td>
+	            <td>${meetingList.user}</td>
+	            <td>${meetingList.cycleCount}</td>
 	        </tr>
 	    </c:forEach>
 	    </tbody>

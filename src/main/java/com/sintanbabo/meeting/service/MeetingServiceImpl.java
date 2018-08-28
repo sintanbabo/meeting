@@ -70,25 +70,34 @@ public class MeetingServiceImpl implements MeetingService {
 			//cycleCount 저장
 			long total = meeting.getCycleCount();
 			
-			for (int i = 0; i < total; i++) {
-				if (i != 0) {
-					// start 에 7일씩 더한다. (반복)
-					calStart.add(Calendar.DATE, 7);
-					meeting.setStart(dtStart.format(calStart.getTime()));
-					
-					// end 에 7일씩 더한다. (반복)
-					calEnd.add(Calendar.DATE, 7);
-					meeting.setEnd(dtEnd.format(calEnd.getTime()));
-				}
+			// start end 를 기준으로 중복된 회의실이 있는지 확인
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("start", meeting.getStart());
+			map.put("end", meeting.getEnd());
+			int check = meetingDao.check(map);
+			if (check > 0)
+				throw new Exception("중복된 예약이 존재합니다.");
+
+			meetingDao.save(meeting);
+			
+			for (int i = 1; i <= total; i++) {
+				
+				// start 에 7일씩 더한다. (반복)
+				calStart.add(Calendar.DATE, 7);
+				meeting.setStart(dtStart.format(calStart.getTime()));
+				
+				// end 에 7일씩 더한다. (반복)
+				calEnd.add(Calendar.DATE, 7);
+				meeting.setEnd(dtEnd.format(calEnd.getTime()));
 				
 				// cycleCount 지정
 				meeting.setCycleCount((long)i+1);
 	
 				// start end 를 기준으로 중복된 회의실이 있는지 확인
-				HashMap<String, Object> map = new HashMap<String, Object>();
+				map = new HashMap<String, Object>();
 				map.put("start", meeting.getStart());
 				map.put("end", meeting.getEnd());
-				int check = meetingDao.check(map);
+				check = meetingDao.check(map);
 				if (check > 0)
 					throw new Exception("중복된 예약이 존재합니다.");
 	
