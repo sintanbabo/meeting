@@ -58,27 +58,27 @@ CREATE TABLE TB_MEETING_ROOM (
 );
 
 INSERT INTO TB_MEETING_ROOM(
-		mettingRoomName)
+		meetingRoomName)
 VALUES ('mettingRoom1');
 
 INSERT INTO TB_MEETING_ROOM(
-		mettingRoomName)
+		meetingRoomName)
 VALUES ('mettingRoom2');
 
 INSERT INTO TB_MEETING_ROOM(
-		mettingRoomName)
+		meetingRoomName)
 VALUES ('mettingRoom3');
 
 INSERT INTO TB_MEETING_ROOM(
-		mettingRoomName)
+		meetingRoomName)
 VALUES ('mettingRoom4');
 
 INSERT INTO TB_MEETING_ROOM(
-		mettingRoomName)
+		meetingRoomName)
 VALUES ('mettingRoom5');
 
 INSERT INTO TB_MEETING_ROOM(
-		mettingRoomName)
+		meetingRoomName)
 VALUES ('mettingRoom6');
 ```
 
