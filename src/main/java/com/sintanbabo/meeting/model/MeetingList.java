@@ -1,7 +1,7 @@
 package com.sintanbabo.meeting.model;
 
 public class MeetingList {
-	private String mettingRoomName;
+	private String meetingRoomName;
 	private String date;
 	private String gubun;
 	private String start;
@@ -10,11 +10,11 @@ public class MeetingList {
 	private Long cycleCount;
 
 	public String getMettingRoomName() {
-		return mettingRoomName;
+		return meetingRoomName;
 	}
 
-	public void setMettingRoomName(String mettingRoomName) {
-		this.mettingRoomName = mettingRoomName;
+	public void setMettingRoomName(String meetingRoomName) {
+		this.meetingRoomName = meetingRoomName;
 	}
 
 	public String getDate() {

@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class Meeting {
 
-	private String mettingRoomName;
+	private String meetingRoomName;
 	private String start;
 	private String end;
 	private String user;
 	private Long cycleCount;
 
 	public String getMettingRoomName() {
-		return mettingRoomName;
+		return meetingRoomName;
 	}
 
-	public void setMettingRoomName(String mettingRoomName) {
-		this.mettingRoomName = mettingRoomName;
+	public void setMettingRoomName(String meetingRoomName) {
+		this.meetingRoomName = meetingRoomName;
 	}
 
 	public String getStart() {
