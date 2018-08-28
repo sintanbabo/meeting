@@ -128,11 +128,11 @@ VALUES ('meetingRoom6');
 - 일주일 동안 정말로 재미있는 시간이였습니다. 
 - 작업 내역
 	- Spring Framework 작업으로 시작
-	- Spring MVC Framework 작업 (MVC 가 가장 구조적으로 깔끔하고 명확하다고 생각합니다.)
-	- Spring 4 MVC Framework 작업 (web.xml 이 사라지고 java 파일로 환경설정구성)
-	- Spring 4 MVC RESTful 작업 (dispatcherSevlet 에서 view 를 반환하는 것이 아닌, 데이터만 반환)
-	- Spring 4 MVC RESTful + hibernate 작업 (hibernate의 복합키 설정이 아주 복잡했음)
-	- Spring 4 MVC RESTful + MyBatis 작업
+	- Spring MVC Framework 작업 
+	- Spring 4 MVC Framework 작업 
+	- Spring 4 MVC RESTful 작업 
+	- Spring 4 MVC RESTful + hibernate 작업
+	- Spring 4 MVC RESTful + hibernate --> MyBatis 작업
 	- Spring 4 MVC RESTful + MyBatis + JSP(Ajax) 작업
 
 
