@@ -70,15 +70,19 @@ public class MeetingServiceImpl implements MeetingService {
 			//cycleCount 저장
 			long total = meeting.getCycleCount();
 			
-			// start end 를 기준으로 중복된 회의실이 있는지 확인
 			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("start", meeting.getStart());
-			map.put("end", meeting.getEnd());
-			int check = meetingDao.check(map);
-			if (check > 0)
-				throw new Exception("중복된 예약이 존재합니다.");
-
-			meetingDao.save(meeting);
+			int check = 0;
+			
+			if (total >= 0) {
+				// start end 를 기준으로 중복된 회의실이 있는지 확인				
+				map.put("start", meeting.getStart());
+				map.put("end", meeting.getEnd());
+				check = meetingDao.check(map);
+				if (check > 0)
+					throw new Exception("중복된 예약이 존재합니다.");
+	
+				meetingDao.save(meeting);
+			}
 			
 			for (int i = 1; i <= total; i++) {
 				
