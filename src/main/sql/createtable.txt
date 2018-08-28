@@ -1,36 +1,36 @@
-CREATE TABLE TB_METTING (
-    mettingRoomName VARCHAR(100) NOT NULL,
+CREATE TABLE TB_MEETING (
+    meetingRoomName VARCHAR(100) NOT NULL,
     start VARCHAR(14) NOT NULL,
     end VARCHAR(14) NOT NULL,
     user VARCHAR(100),
     cycleCount BIGINT,
-    PRIMARY KEY (mettingRoomName, start, end)
+    PRIMARY KEY (meetingRoomName, start, end)
 );
 
-CREATE TABLE TB_METTING_ROOM (
-    mettingRoomName VARCHAR(100) PRIMARY KEY
+CREATE TABLE TB_MEEING_ROOM (
+    meetingRoomName VARCHAR(100) PRIMARY KEY
 );
 
-INSERT INTO TB_METTING_ROOM(
-		mettingRoomName)
+INSERT INTO TB_MEEING_ROOM(
+		meetingRoomName)
 VALUES ('mettingRoom1');
 
-INSERT INTO TB_METTING_ROOM(
-		mettingRoomName)
+INSERT INTO TB_MEEING_ROOM(
+		meetingRoomName)
 VALUES ('mettingRoom2');
 
-INSERT INTO TB_METTING_ROOM(
-		mettingRoomName)
+INSERT INTO TB_MEEING_ROOM(
+		meetingRoomName)
 VALUES ('mettingRoom3');
 
-INSERT INTO TB_METTING_ROOM(
-		mettingRoomName)
+INSERT INTO TB_MEEING_ROOM(
+		meetingRoomName)
 VALUES ('mettingRoom4');
 
-INSERT INTO TB_METTING_ROOM(
-		mettingRoomName)
+INSERT INTO TB_MEEING_ROOM(
+		meetingRoomName)
 VALUES ('mettingRoom5');
 
-INSERT INTO TB_METTING_ROOM(
-		mettingRoomName)
+INSERT INTO TB_MEEING_ROOM(
+		meetingRoomName)
 VALUES ('mettingRoom6');
